@@ -1,6 +1,3 @@
-### $ asm (ldlong &[msg], $dq00; call 0x10, $dq00;)
-### > Hello!
-
 ```asm
 ;Turret64-dev1 assembly
 section .text:
