@@ -2,6 +2,7 @@
 ;Turret64-dev1 assembly
 section .text:
 byte info          "Name:     il1egalmelon", 10,
+                   "Discord:  il1egalmelon", 10,
                    "OS:       Linux Mint", 10,
                    "Kernel:   Linux 5.15.0-88", 10,
                    "DE:       Cinnamon", 10,
