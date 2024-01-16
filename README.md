@@ -29,6 +29,6 @@ main:
 
                    ;clean up ILP header & return
                    nopsplit
-                   xor                    $swap, $swap
+                   bitwise.xor            $swap, $swap
                    ret
 ```
