@@ -18,7 +18,6 @@ global main
 main:
                    ;set up ILP header
                    nopsplit
-                   macro.FlushAll()
 
                    ;print message
                    mov                    $xrsp, $gr00
@@ -32,3 +31,4 @@ main:
                    bitwise.xor            $swap, $swap
                    ret
 ```
+
