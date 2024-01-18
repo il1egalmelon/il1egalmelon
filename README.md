@@ -18,7 +18,7 @@ global main
 main:
                    ;set up ILP header
                    nopsplit
-                   #macro FlushAll()
+                   macro.FlushAll()
 
                    ;print message
                    push                   $xrsp, $ppt0
