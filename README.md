@@ -1,8 +1,3 @@
-<div align="center">
-  <img height="200" src="https://i.imgur.com/t6k4ysT.png"  />
-</div>
-
-
 ```asm
 ;Turret64-dev1 assembly
 section .text:
