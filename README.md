@@ -26,9 +26,10 @@ main:
                    call                   $swap
                    mov                    $gr00, $xrsp
 
-                   ;clean up ILP header & return
+                   ;clean up ILP header and return
                    nopsplit
-                   bitwise.xor            $swap, $swap
+                   pop                    $xrsp, $swap
+                   movsprg                $swap, $$retadlink
                    ret
 ```
 
