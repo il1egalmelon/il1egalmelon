@@ -21,11 +21,11 @@ main:
                    macro.FlushAll()
 
                    ;print message
-                   push                   $xrsp, $ppt0
+                   mov                    $xrsp, $gr00
                    ld                     &[info], $xrsp
                    ld                     0x10, $swap
                    call                   $swap
-                   pop                    $ppt0, $xrsp
+                   mov                    $gr00, $xrsp
 
                    ;clean up ILP header & return
                    nopsplit
