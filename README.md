@@ -27,9 +27,9 @@ main:
                    mov                    $gr00, $xrsp
 
                    ;clean up ILP header and return
-                   nopsplit
                    pop                    $xrsp, $swap
                    movsprg                $swap, $$retadlink
+                   nopsplit
                    ret
 ```
 ###
