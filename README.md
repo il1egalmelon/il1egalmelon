@@ -9,7 +9,7 @@ byte info          "Name:     il1egalmelon", 10,
                    "Location: Canada, USA", 10,
                    "CPU:      Intel i9-11900k", 10,
                    "RAM:      64GiB", 10,
-                   "GPU1:     Nvidia M6000 12GiB", 10,
+                   "GPU0:     Nvidia M6000 12GiB", 10,
                    "GPU1:     Nvidia M6000 12GiB", 10,
                    "Projects: Turret arch, TTE", 10, 0
 
