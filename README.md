@@ -1,6 +1,6 @@
 ```asm
-;Turret64-dev1 assembly
-section .text:
+;Turret64-dev2 assembly
+section .data:
 byte info          "Name:     il1egalmelon", 10,
                    "Discord:  il1egalmelon", 10,
                    "OS:       Linux Mint", 10,
@@ -15,22 +15,25 @@ byte info          "Name:     il1egalmelon", 10,
 
 section .code:
 global main
+
+%define PRINT_STR 0x10
+%define STRING_MODE 0x13
 main:
-                   ;set up ILP header
-                   nopsplit
+                   enter
+                   stapr:immaddr $sectdat, [$gr0 + #(0x01 * 8)]    ;gets data section start address, store in $gr1 via memory map
+                   %%fullstop
 
-                   ;print message
-                   mov                    $xrsp, $gr00
-                   ld                     &[info], $xrsp
-                   ld                     0x10, $swap
-                   call                   $swap
-                   mov                    $gr00, $xrsp
+                   lea:imm7 [$gr0 + $gr1 * 1 + #(0x00 * 1)]        ;loads effective address of [info]
+                   %%fullstop
 
-                   ;clean up ILP header and return
-                   pop                    $xrsp, $swap
-                   movsprg                $swap, $$retadlink
-                   nopsplit
-                   ret
+                   ldi #(info.size), $gr3                          ;gets string size
+                   ldi #(STRING_MODE), $gr2                        ;gets bios print mode
+                   %%fullstop
+
+                   int:bios #(PRINT_STR), $gr2, $gr3, $gr0, $gr0   ;prints info via 0x10 (PRINT_STR)
+                   leave
+                   return
+                   %%fullstop
 ```
 ###
 
