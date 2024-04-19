@@ -24,8 +24,6 @@ main:
                    %%fullstop
 
                    lea:imm7 [$gr0 + $gr1 * 1 + #(0x00 * 1)]        ;loads effective address of [info]
-                   %%fullstop
-
                    ldi #(info.size), $gr3                          ;gets string size
                    ldi #(STRING_MODE), $gr2                        ;gets bios print mode
                    %%fullstop
