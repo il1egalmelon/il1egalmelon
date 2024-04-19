@@ -1,17 +1,15 @@
 ```asm
 ;Turret64-dev2 assembly
 section .data:
-byte info          "Name:     il1egalmelon", 10,
-                   "Discord:  il1egalmelon", 10,
-                   "OS:       Linux Mint", 10,
-                   "Kernel:   Linux 5.15.0-88", 10,
-                   "DE:       Cinnamon", 10,
-                   "Location: Canada, USA", 10,
-                   "CPU:      Intel i9-11900k", 10,
-                   "RAM:      64GiB", 10,
-                   "GPU0:     Nvidia M6000 12GiB", 10,
-                   "GPU1:     Nvidia M6000 12GiB", 10,
-                   "Projects: Turret arch, TTE", 10, 0
+byte info          "Name:      il1egalmelon", 10,
+                   "Discord:   il1egalmelon", 10,
+                   "OS:        Linux Mint", 10,
+                   "Kernel:    Linux 5.15.0-88", 10,
+                   "DE:        Cinnamon", 10,
+                   "Location:  Canada, USA", 10,
+                   "Languages: Chinese, English, French", 10,
+                   "PGR langs: C, C++, C#, x86 assembly", 10,
+                   "Projects:  Turret arch, TTE", 10, 0
 
 section .code:
 global main
