@@ -26,7 +26,10 @@ main:
                    ldi #(STRING_MODE), $gr2                        ;gets bios print mode
                    %%fullstop
 
-                   int:bios #(PRINT_STR), $gr2, $gr3, $gr0, $gr0   ;prints info via 0x10 (PRINT_STR)
+                   stapr:immaddr $leaprm, [$gr0 + #(0x04 * 8)]     ;stores the pointer for [info]
+                   %%fullstop
+
+                   int:bios #(PRINT_STR), $gr2, $gr3, $gr4         ;prints info via 0x10 (PRINT_STR)
                    leave
                    return
                    %%fullstop
