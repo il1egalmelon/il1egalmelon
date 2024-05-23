@@ -31,6 +31,9 @@ main:
 
                    int:bios #(PRINT_STR), $gr2, $gr3, $gr4         ;prints info via 0x10 (PRINT_STR)
                    leave
+                   %%fullstop
+
+                   zero:reg $gr0
                    return
                    %%fullstop
 ```
