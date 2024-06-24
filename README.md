@@ -9,7 +9,7 @@ byte info          "Name:      il1egalmelon", 10,
                    "Location:  Canada, USA", 10,
                    "Languages: Chinese, English, French", 10,
                    "PGR langs: C, C++, C#, x86 assembly", 10,
-                   "Projects:  Turret arch, TTE", 10, 0
+                   "Projects:  Turret arch, TTE, N++", 10, 0
 
 section .code:
 global main
