@@ -1,4 +1,4 @@
-```x86asm
+```asm
 ;Turret64-dev2 assembly
 section .data
 info byte[]        "Name:      il1egalmelon", 10,
