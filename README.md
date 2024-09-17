@@ -12,7 +12,7 @@ info byte[]        "Name:      il1egalmelon", 10,
                    "Projects:  Turret arch, TTE, Swivel", 10, 0
 
 %BASIC_CONSOLE = 0x01
-section .code:
+section .code
 main():
 {
                    add gr1 = rpct, offset msg
