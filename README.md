@@ -1,41 +1,25 @@
-```asm
+```x86asm
 ;Turret64-dev2 assembly
-section .data:
-byte info          "Name:      il1egalmelon", 10,
+section .data
+info byte[]        "Name:      il1egalmelon", 10,
                    "Discord:   il1egalmelon", 10,
                    "OS:        Linux Mint", 10,
                    "Kernel:    Linux 5.15.0-88", 10,
                    "DE:        Cinnamon", 10,
                    "Location:  Canada, USA", 10,
                    "Languages: Chinese, English, French", 10,
-                   "PGR langs: C, C++, C#, x86 assembly", 10,
-                   "Projects:  Turret arch, TTE, N++", 10, 0
+                   "PGR langs: C, C++, C#", 10,
+                   "Projects:  Turret arch, TTE, Swivel", 10, 0
 
+%BASIC_CONSOLE = 0x01
 section .code:
-global main
+main():
+{
+                   add gr1 = rpct, offset msg
+                   int %BASIC_CONSOLE
 
-%define PRINT_STR 0x10
-%define STRING_MODE 0x13
-main:
-                   enter
-                   stapr:immaddr $sectdat, [$gr0 + #(0x01 * 8)]    ;gets data section start address, store in $gr1 via memory map
-                   %%fullstop
-
-                   lea:imm7 [$gr0 + $gr1 * 1 + #(0x00 * 1)]        ;loads effective address of [info]
-                   ldi #(info.size), $gr3                          ;gets string size
-                   ldi #(STRING_MODE), $gr2                        ;gets bios print mode
-                   %%fullstop
-
-                   stapr:immaddr $leaprm, [$gr0 + #(0x04 * 8)]     ;stores the pointer for [info]
-                   %%fullstop
-
-                   int:bios #(PRINT_STR), $gr2, $gr3, $gr4         ;prints info via 0x10 (PRINT_STR)
-                   leave
-                   %%fullstop
-
-                   zero:reg $gr0
-                   return
-                   %%fullstop
+                   ret
+}
 ```
 ###
 
