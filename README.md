@@ -15,7 +15,7 @@ info byte[]        "Name:      il1egalmelon", 10,
 section .code
 main():
 {
-                   add gr1 = rpct, offset msg
+                   add gr1 = rpct, offset info
                    int %BASIC_CONSOLE
 
                    ret
